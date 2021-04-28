@@ -1,0 +1,8 @@
+.sticky-top{
+    position: sticky;
+    top: 0;
+}
+
+.transparent-div{
+	opacity: 0.6;
+}

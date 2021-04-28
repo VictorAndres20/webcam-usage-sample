@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Market App</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+	<!-- CSS Generic Styles -->
+	<link rel="stylesheet" href="dependencies/css/generic-styles.css" />
+	
+	<!-- CSS Bootstrap -->
+	<link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="dependencies/bootstrap/css/mdb.min.css" />
+
+	<!-- JS Bootstrap, JQuery, Popper -->
+	<script src="dependencies/bootstrap/js/jquery.js"></script>
+	<script src="dependencies/bootstrap/js/popper.js"></script>
+	<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
+	<script src="dependencies/bootstrap/js/mdb.min.js"></script>
+	
+	<!-- JS FontAwesome 5.5.0 -->
+  <script src="dependencies/bootstrap/fontawesome/js/all.js"></script>
+  
+  <!-- webcam-easy.js import-->
+  <script type="text/javascript" src="https://unpkg.com/webcam-easy/dist/webcam-easy.min.js"></script>
+
+  <script src="dependencies/js/script.js"></script>
+
+</head>
+<body>
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color sticky-top transparent-div">
+  <a class="navbar-brand" href="#">Market App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+  </div>
+</nav>
+
+
+<div class="container">
+	<div class="row">
+    <div class="col-sm-6">
+      <div class="row">
+        <div>
+          <button id="btn_open" type="button" onclick="start_camera()" class="btn btn-success">Open Camera</button>
+          <button style="display: none;" id="btn_close" type="button" onclick="stop_camera()" class="btn btn-danger">Stop Camera</button>
+          <button style="display: none;" id="btn_snap" type="button" onclick="take_photo()" class="btn btn-info">Snap</button>
+        </div>
+      </div>
+      <div class="row">
+        <video id="webcam" autoplay playsinline width="440" height="280"></video>
+        <canvas id="canvas" class="d-none"></canvas>
+        <audio id="snapSound" src="dependencies/sound/snap.wav" preload = "auto"></audio>
+      </div>
+    </div>
+		<div class="col-sm-6">
+      <h4 style="margin-top: 10px;">Product information</h4>
+      <hr />
+			<div class="jumbotron text-center hoverable p-4">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 offset-md-1 mx-3 my-3">
+
+        <!-- Featured image -->
+        <div class="view overlay zoom">
+        <img id="item" src="https://www.pinclipart.com/picdir/middle/27-279183_download-camera-icon-add-photo-icon-png-clipart.png" width="440" height="280" class="img-fluid " alt="zoom">
+        <div class="mask flex-center waves-effect waves-light">
+        <p class="white-text">Zoom effect</p>
+        </div>
+      </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-7 text-md-left ml-3 mt-3">
+
+        <!-- Excerpt -->
+        <a href="#!" class="green-text">
+          <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i> Info</h6>
+        </a>
+        <div id="spinner" class="spinner-grow text-success" style="display: none;" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+        <div id="product-info">Nothing to show...</div>     
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+  </div>
+</div>
+
+<footer id="footer" style="padding-left: 0px;">
+  <!-- Copyright-->
+  <div class="footer-copyright py-3 text-center">
+    © 2020 Copyright:
+    Estefanía Mahecha Miranda, Daniel Mauricio Corrales, Víctor Andrés Pedraza
+  </div>
+  <!--/.Copyright -->
+</footer>
+</html>

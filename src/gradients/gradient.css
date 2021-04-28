@@ -1,0 +1,53 @@
+.container{
+    height: 50px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.h-gradient-blue{
+    background: linear-gradient(45deg, #7090c0, #12084d);
+}
+
+.h-gradient-orange{
+    background: linear-gradient(45deg, #f3b071, #e26e02);
+}
+
+.h-gradient-yellow{
+    background: linear-gradient(45deg, #fdf28b, #beb100);
+}
+
+.h-gradient-red{
+    background: linear-gradient(45deg, #fda67e, #e04802);
+}
+
+.h-gradient-grey{
+    background: linear-gradient(45deg, #e7e7e7, #5a5a5a);
+}
+
+.h-gradient-green{
+    background: linear-gradient(45deg, #78fd7f, #01a309);
+}
+
+.v-gradient-blue{
+    background: linear-gradient(180deg, #7090c0, #12084d);
+}
+
+.v-gradient-orange{
+    background: linear-gradient(180deg, #f3b071, #e26e02);
+}
+
+.v-gradient-yellow{
+    background: linear-gradient(180deg, #fdf28b, #beb100);
+}
+
+.v-gradient-red{
+    background: linear-gradient(180deg, #fda67e, #e04802);
+}
+
+.v-gradient-grey{
+    background: linear-gradient(180deg, #e7e7e7, #5a5a5a);
+}
+
+.v-gradient-green{
+    background: linear-gradient(180deg, #ccff00, #09afff);
+}

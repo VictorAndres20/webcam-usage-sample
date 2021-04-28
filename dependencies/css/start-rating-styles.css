@@ -1,0 +1,37 @@
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating-input:not(old){
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating-label:not(old){
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('https://cdn.pixabay.com/photo/2015/01/17/11/45/star-602148_1280.png');
+  background-size : contain;
+}
+
+.starRating-label:not(old):before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('https://icon2.cleanpng.com/20180422/kew/kisspng-star-golden-stars-5add5465f24541.9545710215244545019924.jpg');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating-label:not(old):hover:before,
+.starRating-label:not(old):hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}

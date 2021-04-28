@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <!-- CSS Generic Styles -->
+    <link rel="stylesheet" href="../../dependencies/css/generic-styles.css" />
+
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="../../dependencies/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../dependencies/bootstrap/css/mdb.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+
+    <!-- JS Bootstrap, JQuery, Popper -->
+    <script src="../../dependencies/bootstrap/js/jquery.js"></script>
+    <script src="../../dependencies/bootstrap/js/popper.js"></script>
+    <script src="../../dependencies/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../dependencies/bootstrap/js/mdb.min.js"></script>
+
+    <!-- JS FontAwesome 5.5.0 -->
+    <script src="../../dependencies/bootstrap/fontawesome/js/all.js"></script>
+
+    <script src="../../dependencies/js/script.js"></script>
+</head>
+
+<body>
+
+    <!-- INIT main content -->
+
+    <div class="bg-blue">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+
+                    <div class="card promoting-card top1" style="margin-bottom: 20px;">
+                        <div class="card-body d-flex flex-row">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg"
+                                class="rounded-circle mr-3" height="50px" width="50px" alt="avatar">
+                            <div>
+                                <h1 class="card-title">Nueva tienda</h1>
+                            </div>
+                            <div>
+                                <button class="btn btn-danger" style="margin-left: 30px;">Cancelar</button>
+                            </div>
+
+                        </div>
+                        <div class="card-body" style="display: flex;">
+                            <div style="flex: 1 1 auto;">
+                                <p class="card-text">Primero, llena los datos básicos de tu tienda.</p>
+                            </div>
+                            <div style="flex: 1 1 auto;">
+                                <p class="card-text">Segundo, dale a tu tienda una imágen en PetsApp.</p>
+                            </div>
+                            <div style="flex: 1 1 auto;">
+                                <p class="card-text">Por último, selecciona el horario de atención.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-4">
+										Other
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <form>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="registerShopImage"
+                                                    lang="pl-Pl" onchange="readFile(this)">
+                                                <label class="custom-file-label" for="registerShopImage">Click para
+                                                    buscar imagen</label>
+                                            </div>
+                                            <div style="display: flex; height: 150px; margin-top: 20px;">
+                                                <div style="flex: 1 1 auto; justify-content: center; align-items: center;">
+                                                    <img id="previewAvatar" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg"
+                                                        class="rounded-circle mr-3" height="50px" width="50px"
+                                                        alt="avatar">
+                                                </div>
+                                                <div style="flex: 1 1 auto; justify-content: center; align-items: center;">
+                                                    <img id="previewImg" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-8.jpg"
+                                                        height="100px" width="100px" alt="avatar2">
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-primary" style="width: 100%;" onclick="displayDataImage()">Registrar</button>
+                                        </form>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        Other
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-copyright py-3 text-center footer-base white">
+            © 2020 Copyright:
+            <a href="http://vapedraza.com">
+                <strong> vapedraza.com</strong>
+            </a>
+        </div>
+
+    </div>
+    <!-- FINISH main content -->
+
+    <script>
+        var nameImage = null;
+        var dataImage = null;
+        function readFile(input){
+            if (input.files && input.files[0]) {
+                var file = input.files[0];
+                nameImage = file.name;
+                var reader = new FileReader();
+                var previewAvatar = document.getElementById('previewAvatar');
+                var preview = document.getElementById('previewImg');
+                reader.onload = function (e) {
+                    dataImage = e.target.result;
+                    previewAvatar.src = dataImage;
+                    preview.src = dataImage;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert("No file detected");
+            }
+        }
+
+        function displayDataImage(){
+            console.log(dataImage);
+            console.log(getFileImageParts(nameImage, dataImage));
+        }
+
+        function getFileImageParts(nameImage, dataImage){
+            var parts = {name:null, ext: null,contentBase64:null}
+            var nameParts = nameImage.split('.');
+            var dataParts = dataImage.split(';');
+            var typeParts = dataParts[0].split('/');
+            parts.name = nameParts[0];
+            parts.ext = typeParts[1];
+            parts.contentBase64 = dataParts[1].replace('base64,','');
+            return parts;
+        }
+    
+    </script>
+
+</body>
+
+</html>
